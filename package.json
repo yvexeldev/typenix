@@ -1,0 +1,15 @@
+{
+    "bin": {
+      "typenix": "./bin/index.js"
+    },
+    "name": "typenix",
+    "version": "1.0.0",
+    "description": "CLI tool for ts projects",
+    "main": "./bin/index.js",
+    "type": "module",
+    "scripts": {
+        "test": "node index"
+    },
+    "author": "Ritnyx <abdusalomovdev@gmail.com>",
+    "license": "ISC"
+}
