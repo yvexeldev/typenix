@@ -4,6 +4,7 @@ import fs from "fs/promises";
 import {
     eslintRc,
     gitIgnore,
+    mainTs,
     nodemonJson,
     packageJson,
     prettierRc,
@@ -81,6 +82,16 @@ if (process.argv[2] == "new") {
         })
         .then(() => {
             console.log("✅ .gitignore  yaratildi!");
+            return fs.mkdir(path.join(projectFolder, "src"));
+        })
+        .then(() => {
+            return fs.writeFile(
+                path.join(projectFolder, "src", "main.ts"),
+                mainTs
+            );
+        })
+        .then(() => {
+            console.log("✅ src/main.ts  yaratildi!");
             console.log(
                 `\n\n✅ ${projectName} proyekti Initializatsiya qilindi!`
             );

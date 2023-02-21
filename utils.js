@@ -40,11 +40,13 @@ export const packageJson = createJSON({
 });
 
 export const eslintRc = createJSON({
-    semi: true,
-    trailingComma: "all",
-    singleQuote: true,
-    printWidth: 120,
-    tabWidth: 2,
+    parser: "@typescript-eslint/parser",
+    extends: ["plugin:@typescript-eslint/recommended"],
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: "module",
+    },
+    rules: {},
 });
 
 export const nodemonJson = createJSON({
@@ -53,7 +55,6 @@ export const nodemonJson = createJSON({
     ignore: [],
     exec: "npx ts-node ./src/main.ts",
 });
-
 
 export const prettierRc = createJSON({
     semi: true,
@@ -128,3 +129,6 @@ export const tsConfig = createJSON({
         esm: true,
     },
 });
+
+export const mainTs =
+    "// Telegram --> https://t.me/ritnyxdev\n// Github --> https://github.com/ritnyxdev/typenix";
